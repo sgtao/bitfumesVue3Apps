@@ -99,6 +99,13 @@ module.exports = {
 
 ```
 
+### Vue router, Vuex の追加
+- プロジェクト作成時にrouerとstoreを指定し忘れていたので追加
+```
+vue add router
+vue add vuex
+```
+  - routerを後付けしたので、エラーしてしまい、微調整
 
 
 <!-- EOF -->
