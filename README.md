@@ -26,6 +26,78 @@ npm run build
 mv  vue-create-app 11_vue-create-app
 ```
 
+## 環境追加（Prettier追加）
+- prettierを開発用に追加
+```shell
+npm install prettier --save-dev
+```
+  - 設定は最小限にした
+```
+$ cat 11_vue-create-app/.prettierrc
+{
+    "printWidth": 120,
+    "singleQuote": true,
+    "semi": false
+}
+$
+```
+
+- `.eslintrc`の変更
+```js
+module.exports = {
+  root: true,
+  env: {
+    node: true
+  },
+  'extends': [
+    'plugin:vue/vue3-essential',
+-    'eslint:recommended'
++    'eslint:recommended',
++    'prettier'
+  ],
+  parserOptions: {
+    parser: '@babel/eslint-parser'
+  },
+  rules: {
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+  }
+}
+```
+
+- `package.json`の変更
+```JSON
+{
+  "name": "vue-create-app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+-    "lint": "vue-cli-service lint"
++    "lint": "vue-cli-service lint",
++    "format": "prettier -w src/*.{js,vue} && prettier -w src/**/*.{js,vue}",
++    "lint-fix": "npm run format && vue-cli-service lint --fix"
+  },
+  "dependencies": {
+    "core-js": "^3.8.3",
+    "vue": "^3.2.13"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "^7.32.0",
+-    "eslint-plugin-vue": "^8.0.3"
++    "eslint-config-prettier": "^8.5.0",
++    "eslint-plugin-vue": "^8.0.3",
++    "prettier": "^2.7.1"
+  }
+}
+
+```
 
 
 
