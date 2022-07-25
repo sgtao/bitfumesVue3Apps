@@ -10,6 +10,7 @@
 - Demo site : https://vue3-full-course.netlify.app/
 
 ## 作成プロジェクト
-- [トライアル１（`@vue/cli`での開発）の準備メモ](11_vue-create-app/README.md)
+- [トライアル１（`@vue/cli`での構築環境での開発）のメモ](11_vue-create-app/README.md)
+- トライアル２（`create-vue`での構築環境での開発）
 
 <!-- EOF -->
