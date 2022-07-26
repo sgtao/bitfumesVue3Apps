@@ -6,13 +6,14 @@
       <li v-for="(hero, index) in dcHeros" :key="hero.name">
         <div>
           {{ index }}: {{ hero.name }}
-          <button>x</button>
+          <button v-on:click="remove(index)">x</button>
         </div>
       </li>
     </ul>
-    <form>
+    <form @submit.prevent="addHero">
       <input v-model="newHero" ref="newHeroRef" />
-      <button>Add Hero</button>
+      <!-- button clickイベントを直接拾うとリロードするので、formでpreventしてハンドリングする -->
+      <button type="submit">Add Hero</button>
     </form>
   </div>
 </template>
@@ -41,8 +42,21 @@ export default {
     const herosCount = computed({
       get: () => dcHeros.value.length,
     });
+    // listアイテムの削除
+    function remove(index) {
+      dcHeros.value = dcHeros.value.filter((hero, i) => i != index);
+    }
+    // listへのアイテム追加
+    function addHero() {
+      if (newHero.value !== "") {
+        // console.log('add Hero of ' + newHero.value);
+        // dcHeros.value.push({ name: newHero.value }); // 最後に追加する場合
+        dcHeros.value.unshift({ name: newHero.value }); // 先頭に追加する場合
+        newHero.value = "";
+      }
+    }
     //
-    return { newHeroRef, newHero, dcHeros, herosCount };
+    return { newHeroRef, newHero, dcHeros, herosCount, remove, addHero };
   },
 }
 </script>
