@@ -170,13 +170,99 @@ module.exports = {
 
 ```
 
-### Vue router, Vuex の追加
+## Vue router, Vuex の追加
 - プロジェクト作成時にrouerとstoreを指定し忘れていたので追加
 ```
 vue add router
 vue add vuex
 ```
   - routerを後付けしたので、エラーしてしまい、微調整
+
+## VueCLIのアップデート
+- VueCLIアップデート方法
+  - refer Vue : https://cli.vuejs.org/guide/installation.html#upgrading
+```shell
+npm update -g @vue/cli
+npm update
+```
+
+## tailwindcssの追加
+
+### 1. パッケージのインストール
+```shell
+npm install -D tailwindcss postcss autoprefixer
+```
+
+### 2.  configファイルを作成
+```shell
+npx tailwindcss init -p
+```
+
+- 作成されたファイル
+```js
+// tailwind.config.js
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+```js
+// cat postcss.config.js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+### 3. すべてのファイルでtailwindcssを適用
+- `tailwind.config.js`を編集する
+```js
+module.exports = {
+- content: [],
++ content: [
++   "./index.html",
++   "./src/**/*.{vue,js,ts,jsx,tsx}",
++ ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+### 4. tailwindをプロジェクトのCSSに追加
+- ./src/index.cssを追加
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+- `./src/main.js`で読み込む
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './store'
++ import './index.css'
+//
+createApp(App).use(store).use(router).mount('#app')
+//
+// EOF
+```
+
+### 5. 動作確認
+- 開発サーバを起動してみる
+```shell
+npm run serve
+```
 
 
 

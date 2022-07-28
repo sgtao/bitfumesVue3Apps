@@ -1,5 +1,5 @@
 # bitfumesVue3Apps
-- GitHub『bitfumes / vue3-for-beginners』のソースをトレースしてみる
+- bitfumesさんのGitHub『vue3-for-beginners』のソースをトレースしてみる
   - '22.07時点での環境で実装・構築を試してみる
   - `vue create`利用時と、`create-vue`利用時で変化点を確認する
 
@@ -10,7 +10,7 @@
 - Demo site : https://vue3-full-course.netlify.app/
 
 ## 作成プロジェクト
-- [トライアル１（`@vue/cli`での構築環境での開発）のメモ](11_vue-create-app/README.md)
-- トライアル２（`create-vue`での構築環境での開発）
+- トライアル１（`@vue/cli`構築環境での開発）：[メモ](11_vue-create-app/README.md)
+- トライアル２（`create-vue`構築環境での開発）
 
 <!-- EOF -->
