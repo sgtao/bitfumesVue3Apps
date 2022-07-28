@@ -1,19 +1,25 @@
 <!-- DcHeros.vuee -->
 <template>
-  <div>
-    <h1>Dc Heros herosCount {{ herosCount }}</h1>
-    <ul>
-      <li v-for="(hero, index) in dcHeros" :key="hero.name">
-        <div>
+  <div class="m-auto">
+    <h1 class="text-3xl text-center my-4">Dc Heros herosCount {{ herosCount }}</h1>
+    <ul class="rounded p-2 w-80 m-auto">
+      <li class="m-auto"
+       v-for="(hero, index) in dcHeros" :key="hero.name">
+        <div  class="flex justify-between border mt-3 p-1
+                     text-white
+                     bg-gradient-to-r  from-blue-700 to-skyblue-500 ">
           {{ index }}: {{ hero.name }}
-          <button v-on:click="remove(index)">x</button>
+          <button class="text-black"
+           v-on:click="remove(index)">x</button>
         </div>
       </li>
     </ul>
-    <form @submit.prevent="addHero">
-      <input v-model="newHero" ref="newHeroRef" />
+    <form  class="m-auto mt-10" @submit.prevent="addHero">
+      <input class="border-solid border-4 rounded px-2"
+       v-model="newHero" ref="newHeroRef" />
       <!-- button clickイベントを直接拾うとリロードするので、formでpreventしてハンドリングする -->
-      <button type="submit">Add Hero</button>
+      <button class="border rounded bg-gradient-to-r from-red-700 to-pink-500 text-white ml-2 px-2"
+       type="submit">Add Hero</button>
     </form>
   </div>
 </template>
