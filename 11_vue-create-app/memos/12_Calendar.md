@@ -4,8 +4,8 @@
 
 ## 利用機能
 1. Javascript Date
-2. Vue Router
-<!-- 7. vue components -->
+2. v-if
+3. vue components
 
 ## 参照ソースの理解
 
@@ -144,6 +144,9 @@ export default {
 - テンプレートーとスクリプトを参考に実装して、動作確認
   - compositionAPIで実装する
   - refer ics-media : https://ics.media/entry/220120/
-- レイアウト・スタイリングは元ソースを参考に指定
+- レイアウト・スタイリングは元ソースを参考にtailwindcssで指定
   - refer tailwindcss : https://tailwindcss.jp/docs/background-color
-  
+- 部品をコンポーネントに分ける
+  - @/components/monthCalendar/calenarMonthLabel :　カレンダーの年月を表示
+  - @/components/monthCalendar/calendarDayLabel :　カレンダーの曜日を表示
+  - @/components/monthCalendar/calendarDateTable :　カレンダーの日付を表示（断念）

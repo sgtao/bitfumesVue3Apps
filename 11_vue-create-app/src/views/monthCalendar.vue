@@ -2,52 +2,37 @@
 <template>
     <div class="m-auto p-2">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
+        <calenarMonthLabel :monthName="currentMonthName" :year="currentYear" />
         <section class="flex justify-between">
-            <h2 class="font-bold text-right">{{ currentMonthName }}</h2>
-            <h2 class="font-bold">{{ currentYear }}</h2>
+            <button class="px-2 border rounded bg-red-200" v-on:click="prevMonth">prev</button>
+            <button class="px-2 border rounded bg-green-200" v-on:click="currMonth">today</button>
+            <button class="px-2 border rounded bg-blue-200" v-on:click="nextMonth">next</button>
         </section>
-        <section class="flex justify-between">
-            <button  class="px-2 border rounded bg-red-200"
-                v-on:click="prevMonth">
-                prev
-            </button>
-            <button  class="px-2 border rounded bg-green-200"
-                v-on:click="currMonth">
-                today
-            </button>
-            <button  class="px-2 border rounded bg-blue-200"
-                v-on:click="nextMonth">
-                next
-            </button>
-        </section>
-        <section class="mt-2 flex justify-between">
-            <p class="m-2 text-center font-bold"
-                v-for="day in days" :key="day"
-            >
-                {{ day }}
-            </p>
-        </section>
+        <calendarDayLabel :days="days" />
         <section class="flex flex-wrap">
-            <p
-                class="text-center"
-                style="width: 14.28%"
-                v-for="num in startDay()"
-                :key="num"
-            ></p>
+            <p class="text-center" style="width: 14.28%" v-for="num in startDay()" :key="num"></p>
             <p
                 class="text-center"
                 style="width: 14.28%"
                 v-for="num in daysInMonth()"
                 :key="num"
                 :class="currenDateClass(num)"
-            >{{num}}</p>
+            >
+                {{ num }}
+            </p>
         </section>
     </div>
 </template>
 
 <script>
-import { computed, ref } from 'vue';
+import {computed, ref} from 'vue';
+import calenarMonthLabel from '@/components/monthCalendar/calenarMonthLabel';
+import calendarDayLabel from '@/components/monthCalendar/calendarDayLabel';
 export default {
+    components: {
+        calenarMonthLabel,
+        calendarDayLabel,
+    },
     setup() {
         // 現在時刻の年月日
         const today = new Date();
@@ -55,13 +40,13 @@ export default {
         const currentMonth = ref(today.getMonth());
         const currentYear = ref(today.getFullYear());
         // 曜日のラベル
-        const days = ref(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]);
+        const days = ref(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']);
         // 月名の表示
         const currentMonthName = computed(() => {
             const calendarMonth = new Date(currentYear.value, currentMonth.value);
-            console.log(calendarMonth.toLocaleString("default", { month: "long"}));
-            return calendarMonth.toLocaleString("default", { month: "long"});
-        })
+            console.log(calendarMonth.toLocaleString('default', {month: 'long'}));
+            return calendarMonth.toLocaleString('default', {month: 'long'});
+        });
         //
         // 指定年月の１日目の曜日を取得
         const startDay = () => {
@@ -82,7 +67,7 @@ export default {
                 currentMonth.value++;
             }
         };
-        // 
+        //
         // 前月への遷移
         const prevMonth = () => {
             if (currentMonth.value <= 0) {
@@ -92,7 +77,7 @@ export default {
                 currentMonth.value--;
             }
         };
-        // 
+        //
         // 今月への遷移
         const currMonth = () => {
             const today = new Date();
@@ -102,22 +87,26 @@ export default {
         //
         // 今日の日付にクラス名を追加付与する
         const currenDateClass = (num) => {
-            const calenderFullDate = new Date(
-                currentYear.value,
-                currentMonth.value,
-                num
-            ).toDateString();
+            const calenderFullDate = new Date(currentYear.value, currentMonth.value, num).toDateString();
             const currentFullDate = new Date().toDateString();
-            return calenderFullDate === currentFullDate ? 
-                "text-red-600 bg-green-200 rounded-full flex items-center justify-center" : 
-                "";
-        }
+            return calenderFullDate === currentFullDate
+                ? 'text-red-600 bg-green-200 rounded-full flex items-center justify-center'
+                : '';
+        };
         //
         return {
-            currentDate, currentMonth, currentYear, days,
-            currentMonthName, startDay, daysInMonth,
-            nextMonth, prevMonth, currMonth, currenDateClass, 
-        }
-    }
-}
+            currentDate,
+            currentMonth,
+            currentYear,
+            days,
+            currentMonthName,
+            startDay,
+            daysInMonth,
+            nextMonth,
+            prevMonth,
+            currMonth,
+            currenDateClass,
+        };
+    },
+};
 </script>

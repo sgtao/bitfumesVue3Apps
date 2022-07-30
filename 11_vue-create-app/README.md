@@ -12,7 +12,8 @@
    <!-- 7. vue components -->
 2. 🔷 [Calendar](memos/12_Calendar.md)
    1. Javascript Date
-   2. Vue Router
+   2. v-if
+   3. vue components
 3. 🔷 Markdown
    1. Using External Library
    2. Vue Mixins
