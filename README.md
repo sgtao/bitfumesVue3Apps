@@ -11,6 +11,7 @@
 
 ## 作成プロジェクト
 - トライアル１（`@vue/cli`構築環境での開発）：[メモ](11_vue-create-app/README.md)
+  - OptionalAPIでコーディングしているものもCompositionAPIに変えてみる
 - トライアル２（`create-vue`構築環境での開発）
 
 <!-- EOF -->

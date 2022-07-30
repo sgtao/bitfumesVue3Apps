@@ -69,20 +69,26 @@
 export default {
   data() {
     return {
-      // 現在時刻の
+      // 現在時刻の年月日
       currentDate: new Date().getUTCDate(),
       currentMonth: new Date().getMonth(),
       currentYear: new Date().getFullYear(),
+      // 曜日のラベル
       days: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     };
   },
   methods: {
+    // 指定年月の日数を取得
     daysInMonth() {
       return new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
     },
+    // 
+    // 指定年月の１日目の曜日を取得
     startDay() {
       return new Date(this.currentYear, this.currentMonth, 1).getDay();
     },
+    // 
+    // 翌月への遷移
     next() {
       if (this.currentMonth === 11) {
         this.currentMonth = 0;
@@ -91,6 +97,8 @@ export default {
         this.currentMonth++;
       }
     },
+    // 
+    // 前月への遷移
     prev() {
       if (this.currentMonth === 0) {
         this.currentMonth = 11;
@@ -99,6 +107,8 @@ export default {
         this.currentMonth--;
       }
     },
+    // 
+    // 今日を黄色にする
     currenDateClass(num) {
       const calenderFullDate = new Date(
         this.currentYear,
@@ -110,6 +120,8 @@ export default {
     },
   },
   computed: {
+    // 
+    // 月の表示
     currentMonthName() {
       return new Date(
         this.currentYear,
