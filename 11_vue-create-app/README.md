@@ -264,5 +264,15 @@ createApp(App).use(store).use(router).mount('#app')
 npm run serve
 ```
 
+### 6. ESLint+Prettierを適用する
+- ics-mediaの[Prettier導入記事](https://ics.media/entry/17030/)を参考にESLint+Prettierを導入する
+  - refer Google : https://google.github.io/styleguide/jsguide.html
+  - refer ESLint : https://eslint.org/docs/latest/rules
+
+```shell
+npm run lint   # only lint check
+npm run format # overwrite by prettier
+npm run lint-fix # overwrite recommended and format
+```
 
 
