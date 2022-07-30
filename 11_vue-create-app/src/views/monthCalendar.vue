@@ -11,6 +11,10 @@
                 v-on:click="prevMonth">
                 prev
             </button>
+            <button  class="px-2 border rounded bg-green-200"
+                v-on:click="currMonth">
+                today
+            </button>
             <button  class="px-2 border rounded bg-blue-200"
                 v-on:click="nextMonth">
                 next
@@ -88,6 +92,13 @@ export default {
                 currentMonth.value--;
             }
         };
+        // 
+        // 今月への遷移
+        const currMonth = () => {
+            const today = new Date();
+            currentMonth.value = today.getMonth();
+            currentYear.value = today.getFullYear();
+        };
         //
         // 今日の日付にクラス名を追加付与する
         const currenDateClass = (num) => {
@@ -104,8 +115,8 @@ export default {
         //
         return {
             currentDate, currentMonth, currentYear, days,
-            currentMonthName, startDay, daysInMonth, nextMonth, prevMonth,
-            currenDateClass, 
+            currentMonthName, startDay, daysInMonth,
+            nextMonth, prevMonth, currMonth, currenDateClass, 
         }
     }
 }
