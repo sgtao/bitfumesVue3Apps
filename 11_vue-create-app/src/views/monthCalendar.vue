@@ -2,36 +2,27 @@
 <template>
     <div class="m-auto p-2">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
-        <calenarMonthLabel :monthName="currentMonthName" :year="currentYear" />
+        <monthLabel :monthName="currentMonthName" :year="currentYear" />
         <section class="flex justify-between">
             <button class="px-2 border rounded bg-red-200" v-on:click="prevMonth">prev</button>
             <button class="px-2 border rounded bg-green-200" v-on:click="currMonth">today</button>
             <button class="px-2 border rounded bg-blue-200" v-on:click="nextMonth">next</button>
         </section>
-        <calendarDayLabel :days="days" />
-        <section class="flex flex-wrap">
-            <p class="text-center" style="width: 14.28%" v-for="num in startDay()" :key="num"></p>
-            <p
-                class="text-center"
-                style="width: 14.28%"
-                v-for="num in daysInMonth()"
-                :key="num"
-                :class="currenDateClass(num)"
-            >
-                {{ num }}
-            </p>
-        </section>
+        <dayLabel :days="days" />
+        <dateTable :currentYear="currentYear" :currentMonth="currentMonth"></dateTable>
     </div>
 </template>
 
 <script>
 import {computed, ref} from 'vue';
-import calenarMonthLabel from '@/components/monthCalendar/calenarMonthLabel';
-import calendarDayLabel from '@/components/monthCalendar/calendarDayLabel';
+import monthLabel from '@/components/monthCalendar/monthLabel';
+import dayLabel from '@/components/monthCalendar/dayLabel';
+import dateTable from '@/components/monthCalendar/dateTable';
 export default {
-    components: {
-        calenarMonthLabel,
-        calendarDayLabel,
+    components: { 
+        monthLabel, 
+        dayLabel, 
+        dateTable, 
     },
     setup() {
         // 現在時刻の年月日
@@ -41,23 +32,13 @@ export default {
         const currentYear = ref(today.getFullYear());
         // 曜日のラベル
         const days = ref(['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']);
+        //
         // 月名の表示
         const currentMonthName = computed(() => {
             const calendarMonth = new Date(currentYear.value, currentMonth.value);
-            console.log(calendarMonth.toLocaleString('default', {month: 'long'}));
+            // console.log(calendarMonth.toLocaleString('default', {month: 'long'}));
             return calendarMonth.toLocaleString('default', {month: 'long'});
         });
-        //
-        // 指定年月の１日目の曜日を取得
-        const startDay = () => {
-            const calendarDate = new Date(currentYear.value, currentMonth.value, 1);
-            console.log('startDay : ' + calendarDate.getDay());
-            return calendarDate.getDay();
-        };
-        // 指定年月の日数を取得
-        const daysInMonth = () => {
-            return new Date(currentYear.value, currentMonth.value + 1, 0).getDate();
-        };
         // 翌月への遷移
         const nextMonth = () => {
             if (currentMonth.value >= 11) {
@@ -85,27 +66,15 @@ export default {
             currentYear.value = today.getFullYear();
         };
         //
-        // 今日の日付にクラス名を追加付与する
-        const currenDateClass = (num) => {
-            const calenderFullDate = new Date(currentYear.value, currentMonth.value, num).toDateString();
-            const currentFullDate = new Date().toDateString();
-            return calenderFullDate === currentFullDate
-                ? 'text-red-600 bg-green-200 rounded-full flex items-center justify-center'
-                : '';
-        };
-        //
         return {
             currentDate,
             currentMonth,
             currentYear,
             days,
             currentMonthName,
-            startDay,
-            daysInMonth,
             nextMonth,
             prevMonth,
             currMonth,
-            currenDateClass,
         };
     },
 };

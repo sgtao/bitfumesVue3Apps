@@ -1,4 +1,4 @@
-<!-- calendarDayLabel.vue -->
+<!-- dayLabel.vue -->
 <template>
     <section class="mt-2 flex justify-between">
         <p class="m-2 text-center font-bold" v-for="day in days" :key="day">
@@ -8,9 +8,9 @@
 </template>
 <script>
 export default {
-    name: 'calendarDayLabel',
+    name: 'dayLabel',
     props: {
-        days: Array,
+        'days': Array,
     },
 };
 </script>

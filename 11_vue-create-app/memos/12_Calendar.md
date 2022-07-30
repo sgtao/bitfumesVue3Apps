@@ -150,3 +150,4 @@ export default {
   - @/components/monthCalendar/calenarMonthLabel :　カレンダーの年月を表示
   - @/components/monthCalendar/calendarDayLabel :　カレンダーの曜日を表示
   - @/components/monthCalendar/calendarDateTable :　カレンダーの日付を表示（断念）
+  - refer article : https://codelikes.com/vue-props/
