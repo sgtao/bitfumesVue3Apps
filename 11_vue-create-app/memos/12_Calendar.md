@@ -36,7 +36,7 @@
     </section>
     <!-- 日を表示 -->
     <section class="flex flex-wrap">
-      <!-- 第１週目の表示 -->
+      <!-- 第１週目の表示（１日の前に空白を入れる） -->
       <p
         class="text-center"
         style="width: 14.28%"

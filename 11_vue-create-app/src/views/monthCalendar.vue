@@ -2,9 +2,30 @@
 <template>
     <div class="m-auto p-2">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
-        <section>
+        <section class="flex justify-between">
             <h2>{{ currentMonthName }}</h2>
             <h2>{{ currentYear }}</h2>
+        </section>
+        <section class="mt-2 flex justify-between">
+            <p class="m-2 text-center"
+                v-for="day in days" :key="day"
+            >
+                {{ day }}
+            </p>
+        </section>
+        <section class="flex flex-wrap">
+            <p
+                class="text-center"
+                style="width: 14.28%"
+                v-for="num in startDay()"
+                :key="num"
+            ></p>
+            <p
+                class="text-center"
+                style="width: 14.28%"
+                v-for="num in daysInMonth()"
+                :key="num"
+            >{{num}}</p>
         </section>
     </div>
 </template>
@@ -22,14 +43,24 @@ export default {
         const days = ref(["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]);
         // 月名の表示
         const currentMonthName = computed(() => {
-            console.log(currentYear.value, currentMonth.value) ;
             const calendarMonth = new Date(currentYear.value, currentMonth.value);
-            console.log(calendarMonth);
+            console.log(calendarMonth.toLocaleString("default", { month: "long"}));
             return calendarMonth.toLocaleString("default", { month: "long"});
         })
+        //
+        // 指定年月の１日目の曜日を取得
+        const startDay = () => {
+            const calendarDate = new Date(currentYear.value, currentMonth.value, 1);
+            console.log('startDay : ' + calendarDate.getDay());
+            return calendarDate.getDay();
+        };
+        // 指定年月の日数を取得
+        const daysInMonth = () => {
+            return new Date(currentYear.value, currentMonth.value + 1, 0).getDate();
+        };
         return {
             currentDate, currentMonth, currentYear, days,
-            currentMonthName, 
+            currentMonthName, startDay, daysInMonth, 
         }
     }
 }
