@@ -2,6 +2,7 @@ import {createRouter, createWebHistory} from 'vue-router';
 import defaultHome from '../views/defaultHome.vue';
 import defaultAbout from '../views/defaultAbout.vue';
 import DcHeros from '../views/DcHeros.vue';
+import monthCalendar from '../views/monthCalendar.vue';
 //
 const routes = [
     {
@@ -18,6 +19,11 @@ const routes = [
         path: '/DcHeros',
         name: 'DcHeros',
         component: DcHeros,
+    },
+    {
+        path: '/Calendar',
+        name: 'Calendar',
+        component: monthCalendar,
     },
 ];
 //

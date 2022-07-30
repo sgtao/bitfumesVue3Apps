@@ -1,4 +1,0 @@
-<!-- Calendar.vue -->
-<template>
-
-</template>
