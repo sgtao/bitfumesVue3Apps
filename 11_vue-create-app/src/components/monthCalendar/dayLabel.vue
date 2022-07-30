@@ -10,7 +10,7 @@
 export default {
     name: 'dayLabel',
     props: {
-        'days': Array,
+        days: Array,
     },
 };
 </script>

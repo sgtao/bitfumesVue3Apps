@@ -15,7 +15,10 @@
         <form class="m-auto mt-10" @submit.prevent="addHero">
             <input class="border-solid border-4 rounded px-2" v-model="newHero" ref="newHeroRef" />
             <!-- button clickイベントを直接拾うとリロードするので、formでpreventしてハンドリングする -->
-            <button class="border rounded bg-gradient-to-r from-red-700 to-pink-500 text-white ml-2 px-2" type="submit">
+            <button
+                class="border rounded bg-gradient-to-r from-red-700 to-pink-500 text-white ml-2 px-2"
+                type="submit"
+            >
                 Add Hero
             </button>
         </form>

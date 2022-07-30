@@ -19,10 +19,10 @@ import monthLabel from '@/components/monthCalendar/monthLabel';
 import dayLabel from '@/components/monthCalendar/dayLabel';
 import dateTable from '@/components/monthCalendar/dateTable';
 export default {
-    components: { 
-        monthLabel, 
-        dayLabel, 
-        dateTable, 
+    components: {
+        monthLabel,
+        dayLabel,
+        dateTable,
     },
     setup() {
         // 現在時刻の年月日

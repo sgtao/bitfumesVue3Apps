@@ -9,8 +9,8 @@
 export default {
     name: 'monthLabel',
     props: {
-        'monthName': String,
-        'year': Number,
+        monthName: String,
+        year: Number,
     },
 };
 </script>

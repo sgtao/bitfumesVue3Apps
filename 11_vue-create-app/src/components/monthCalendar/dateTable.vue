@@ -2,7 +2,13 @@
 <template>
     <section class="flex flex-wrap">
         <p class="text-center" style="width: 14.28%" v-for="num in startDay()" :key="num"></p>
-        <p class="text-center" style="width: 14.28%" v-for="num in daysInMonth()" :key="num" :class="currenDateClass(num)">
+        <p
+            class="text-center"
+            style="width: 14.28%"
+            v-for="num in daysInMonth()"
+            :key="num"
+            :class="currenDateClass(num)"
+        >
             {{ num }}
         </p>
     </section>
@@ -11,8 +17,8 @@
 export default {
     name: 'dateTable',
     props: {
-        'currentYear' : Number,
-        'currentMonth': Number,
+        currentYear: Number,
+        currentMonth: Number,
     },
     setup(props) {
         // 指定年月の１日目の曜日を取得
@@ -30,7 +36,11 @@ export default {
         //
         // 今日の日付にクラス名を追加付与する
         const currenDateClass = (num) => {
-            const calenderFullDate = new Date(props.currentYear, props.currentMonth, num).toDateString();
+            const calenderFullDate = new Date(
+                props.currentYear,
+                props.currentMonth,
+                num
+            ).toDateString();
             const currentFullDate = new Date().toDateString();
             return calenderFullDate === currentFullDate
                 ? 'text-red-600 bg-green-200 rounded-full flex items-center justify-center'
