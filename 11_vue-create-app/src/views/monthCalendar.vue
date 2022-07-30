@@ -6,6 +6,10 @@
             <h2>{{ currentMonthName }}</h2>
             <h2>{{ currentYear }}</h2>
         </section>
+        <section class="flex justify-between">
+            <button v-on:click="prevMonth">prev</button>
+            <button v-on:click="nextMonth">next</button>
+        </section>
         <section class="mt-2 flex justify-between">
             <p class="m-2 text-center"
                 v-for="day in days" :key="day"
@@ -58,9 +62,28 @@ export default {
         const daysInMonth = () => {
             return new Date(currentYear.value, currentMonth.value + 1, 0).getDate();
         };
+        // 翌月への遷移
+        const nextMonth = () => {
+            if (currentMonth.value >= 11) {
+                currentYear.value++;
+                currentMonth.value = 0;
+            } else {
+                currentMonth.value++;
+            }
+        };
+        // 
+        // 前月への遷移
+        const prevMonth = () => {
+            if (currentMonth.value <= 0) {
+                currentYear.value--;
+                currentMonth.value = 11;
+            } else {
+                currentMonth.value--;
+            }
+        };
         return {
             currentDate, currentMonth, currentYear, days,
-            currentMonthName, startDay, daysInMonth, 
+            currentMonthName, startDay, daysInMonth, nextMonth, prevMonth,
         }
     }
 }
