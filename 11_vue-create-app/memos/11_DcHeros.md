@@ -1,5 +1,5 @@
 <!-- 11_DcHeros.md -->
-# 11_DcHeros
+# 🔷 DcHeros
 - [DC Comics Hero](https://www.dccomics.com/characters)をリストアップするアプリ
 
 ## 利用機能
