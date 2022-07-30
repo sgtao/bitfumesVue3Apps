@@ -132,3 +132,18 @@ export default {
 };
 </script>
 ```
+
+### スタイリング（tailwindの利用）
+- bitfumesのアプリではtailwindを利用している
+```css
+<style></style>
+```
+
+
+## 実装作戦
+- テンプレートーとスクリプトを参考に実装して、動作確認
+  - compositionAPIで実装する
+  - refer ics-media : https://ics.media/entry/220120/
+- レイアウト・スタイリングは元ソースを参考に指定
+  - refer tailwindcss : https://tailwindcss.jp/docs/background-color
+  

@@ -3,15 +3,21 @@
     <div class="m-auto p-2">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
         <section class="flex justify-between">
-            <h2>{{ currentMonthName }}</h2>
-            <h2>{{ currentYear }}</h2>
+            <h2 class="font-bold text-right">{{ currentMonthName }}</h2>
+            <h2 class="font-bold">{{ currentYear }}</h2>
         </section>
         <section class="flex justify-between">
-            <button v-on:click="prevMonth">prev</button>
-            <button v-on:click="nextMonth">next</button>
+            <button  class="px-2 border rounded bg-red-200"
+                v-on:click="prevMonth">
+                prev
+            </button>
+            <button  class="px-2 border rounded bg-blue-200"
+                v-on:click="nextMonth">
+                next
+            </button>
         </section>
         <section class="mt-2 flex justify-between">
-            <p class="m-2 text-center"
+            <p class="m-2 text-center font-bold"
                 v-for="day in days" :key="day"
             >
                 {{ day }}
@@ -29,6 +35,7 @@
                 style="width: 14.28%"
                 v-for="num in daysInMonth()"
                 :key="num"
+                :class="currenDateClass(num)"
             >{{num}}</p>
         </section>
     </div>
@@ -81,9 +88,24 @@ export default {
                 currentMonth.value--;
             }
         };
+        //
+        // 今日の日付にクラス名を追加付与する
+        const currenDateClass = (num) => {
+            const calenderFullDate = new Date(
+                currentYear.value,
+                currentMonth.value,
+                num
+            ).toDateString();
+            const currentFullDate = new Date().toDateString();
+            return calenderFullDate === currentFullDate ? 
+                "text-red-600 bg-green-200 rounded-full flex items-center justify-center" : 
+                "";
+        }
+        //
         return {
             currentDate, currentMonth, currentYear, days,
             currentMonthName, startDay, daysInMonth, nextMonth, prevMonth,
+            currenDateClass, 
         }
     }
 }
