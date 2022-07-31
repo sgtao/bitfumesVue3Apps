@@ -3,6 +3,7 @@ import defaultHome from '../views/defaultHome.vue';
 import defaultAbout from '../views/defaultAbout.vue';
 import DcHeros from '../views/DcHeros.vue';
 import monthCalendar from '../views/monthCalendar.vue';
+import MarkdownApp from '../views/MarkdownApp.vue';
 //
 const routes = [
     {
@@ -24,6 +25,11 @@ const routes = [
         path: '/Calendar',
         name: 'Calendar',
         component: monthCalendar,
+    },
+    {
+        path: '/Markdown',
+        name: 'Markdown',
+        component: MarkdownApp,
     },
 ];
 //
