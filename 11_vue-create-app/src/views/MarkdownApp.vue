@@ -11,8 +11,8 @@
                     <textarea
                         ref="markdownTextArea"
                         class="w-full h-full"
-                        v-model="text"
-                        @input="update"
+                        v-bind:value="text"
+                        v-on:input="update"
                     ></textarea>
                 </article>
                 <!-- v-htmlで結果を表示 -->
@@ -27,11 +27,21 @@ import {ref, computed} from 'vue';
 import {marked} from 'marked';
 export default {
     setup() {
-        const text = ref('# **initial text**');
+        const text = ref('# **initial text**\n\n Write markdown\n\n');
         const markedText = computed(() => {
+            console.log('marked at ' + Date(Date.now()));
             return marked(text.value);
         });
-        return {text, markedText};
+        const update = (e) => {
+            // text.value = e.target.value; // without debounce
+            // when conver with debounce, following:
+            setTimeout(() => {
+                if (text.value !== e.target.value) {
+                    text.value = e.target.value;
+                }
+            }, 1000)
+        };
+        return {text, markedText, update};
     },
 };
 </script>
