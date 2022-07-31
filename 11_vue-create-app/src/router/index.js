@@ -4,6 +4,7 @@ import defaultAbout from '../views/defaultAbout.vue';
 import DcHeros from '../views/DcHeros.vue';
 import monthCalendar from '../views/monthCalendar.vue';
 import MarkdownApp from '../views/MarkdownApp.vue';
+import sliderApp from '../views/sliderApp.vue';
 //
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         path: '/markdown',
         name: 'Markdown',
         component: MarkdownApp,
+    },
+    {
+        path: '/slider',
+        name: 'Slider',
+        component: sliderApp,
     },
 ];
 //
