@@ -100,6 +100,8 @@ npm install marked --save
 ```
 2. templateはコピー。scriptタグ部はCompositionAPIで実装する
 3. `marked`パッケージのオプションを追加・施行してみる
+  - refer marked site : https://marked.js.org/using_advanced#options
+  
 
 
 

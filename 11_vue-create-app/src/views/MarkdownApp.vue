@@ -2,10 +2,10 @@
 <!-- HTML -->
 <template>
     <div class="m-auto h-screen">
-        <h1 class="w-full text-3xl my-4">Markdown App</h1>
+        <h1 class="w-full text-3xl my-4 text-center">Markdown App</h1>
         <!-- アプリ本体の領域 -->
         <div class="flex flex-wrap w-full h-screen">
-            <section class="flex m-auto w-10/12 h-full">
+            <section class="flex m-auto w-10/12 h-full text-left">
                 <!-- テキストエリアを設置 -->
                 <article class="w-1/2 border">
                     <textarea
@@ -16,7 +16,7 @@
                     ></textarea>
                 </article>
                 <!-- v-htmlで結果を表示 -->
-                <article class="w-1/2 border bg-gray-100" v-html="markedText"></article>
+                <article class="w-1/2 border bg-gray-100 pl-4" v-html="markedText"></article>
             </section>
         </div>
     </div>
@@ -25,13 +25,14 @@
 <script>
 import {ref, computed, onMounted} from 'vue';
 import {marked} from 'marked';
+// import hljs from 'highlight.js';
 import useDebounce from '@/utilities/composition/useDebounce';
 export default {
     setup() {
         const textRef = ref(''); // text領域のforcus用
         const text = ref('# **initial text**\n\n Write markdown\n\n');
         const markedText = computed(() => {
-            console.log('marked at ' + Date(Date.now()));
+            // console.log('marked at ' + Date(Date.now()));
             return marked(text.value);
         });
         const debounce = useDebounce();
@@ -48,6 +49,24 @@ export default {
         // mountされたとき、input要素にforcusする？
         onMounted(() => {
             textRef.value.focus();
+            // Set options
+            // `highlight` example uses https://highlightjs.org
+            marked.setOptions({
+                renderer: new marked.Renderer(),
+                highlight: function (code, lang) {
+                    const hljs = require('highlight.js');
+                    const language = hljs.getLanguage(lang) ? lang : 'plaintext';
+                    return hljs.highlight(code, {language}).value;
+                },
+                langPrefix: 'hljs language-', // highlight.js css expects a top-level 'hljs' class.
+                pedantic: false,
+                gfm: true,
+                breaks: false,
+                sanitize: false,
+                smartLists: true,
+                smartypants: false,
+                xhtml: false,
+            });
         });
         return {textRef, text, markedText, update};
     },
