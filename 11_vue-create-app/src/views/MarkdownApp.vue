@@ -16,12 +16,23 @@
                     ></textarea>
                 </article>
                 <!-- v-htmlで結果を表示 -->
-                <article class="w-1/2 border bg-gray-100" v-html="markedText"></article>
+                <article class="w-1/2 border bg-gray-100">{{ markedText }}</article>
             </section>
         </div>
     </div>
 </template>
 <!-- JavaScript -->
-<script></script>
+<script>
+import { ref, computed } from 'vue';
+export default {
+    setup() {
+        const text = ref("initial text");
+        const markedText = computed(() => {
+            return (text);
+        });
+        return { text, markedText };
+    },
+}
+</script>
 <!-- CSS -->
 <style></style>
