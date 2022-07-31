@@ -17,17 +17,17 @@ const routes = [
         component: defaultAbout,
     },
     {
-        path: '/DcHeros',
+        path: '/dc-heros',
         name: 'DcHeros',
         component: DcHeros,
     },
     {
-        path: '/Calendar',
+        path: '/calendar',
         name: 'Calendar',
         component: monthCalendar,
     },
     {
-        path: '/Markdown',
+        path: '/markdown',
         name: 'Markdown',
         component: MarkdownApp,
     },
