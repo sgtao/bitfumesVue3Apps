@@ -5,8 +5,9 @@
         <h1 class="m-auto w-full text-xl">Slider</h1>
         <div class="w-full absolute" v-for="(color, index) in sliders" :key="color">
             <transition name="fade">
-                <div v-if="index === currentSlide"
-                :class="color" style="height: 350px">{{ index }}</div>
+                <div v-if="index === currentSlide" :class="color" style="height: 350px">
+                    {{ index }}
+                </div>
             </transition>
         </div>
     </section>
@@ -23,9 +24,9 @@ export default {
             'bg-blue-600',
             'bg-yellow-600',
         ]);
-        const interval = ref("");
+        const interval = ref('');
         //
-        // define function as method 
+        // define function as method
         const makeActive = (index) => {
             currentSlide.value = index;
         };
@@ -33,10 +34,8 @@ export default {
         // define lifecyle hooks
         onMounted(() => {
             interval.value = setInterval(() => {
-                currentSlide.value = 
-                    currentSlide.value === 2 ? 0 : 
-                    currentSlide.value += 1;
-                }, 2000);
+                currentSlide.value = currentSlide.value === 2 ? 0 : (currentSlide.value += 1);
+            }, 2000);
         });
         onBeforeUnmount(() => {
             clearInterval(interval.value);
@@ -52,11 +51,17 @@ export default {
 </script>
 <!-- style -->
 <style>
-    .fade-enter-from {
-        opacity: 0;
-    }
-    .fade-leave-to {
-        opacity: 0;
-    }
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 1s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.fade-leave-to {
+  opacity: 0;
+  transform: translateX(100%);
+}
 </style>
 <!-- EOF -->
