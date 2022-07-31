@@ -9,7 +9,7 @@
                 <!-- テキストエリアを設置 -->
                 <article class="w-1/2 border">
                     <textarea
-                        ref="markdownTextArea"
+                        ref="textRef"
                         class="w-full h-full"
                         v-bind:value="text"
                         v-on:input="update"
@@ -23,25 +23,33 @@
 </template>
 <!-- JavaScript -->
 <script>
-import {ref, computed} from 'vue';
+import {ref, computed, onMounted} from 'vue';
 import {marked} from 'marked';
+import useDebounce from '@/utilities/composition/useDebounce';
 export default {
     setup() {
+        const textRef = ref(''); // text領域のforcus用
         const text = ref('# **initial text**\n\n Write markdown\n\n');
         const markedText = computed(() => {
             console.log('marked at ' + Date(Date.now()));
             return marked(text.value);
         });
+        const debounce = useDebounce();
         const update = (e) => {
-            // text.value = e.target.value; // without debounce
-            // when conver with debounce, following:
-            setTimeout(() => {
+            // define task as callback
+            const task = () => {
                 if (text.value !== e.target.value) {
                     text.value = e.target.value;
                 }
-            }, 1000)
+            };
+            // exec task with debounce
+            debounce(task, 500);
         };
-        return {text, markedText, update};
+        // mountされたとき、input要素にforcusする？
+        onMounted(() => {
+            textRef.value.focus();
+        });
+        return {textRef, text, markedText, update};
     },
 };
 </script>
