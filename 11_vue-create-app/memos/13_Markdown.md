@@ -3,13 +3,8 @@
 - （左欄に）Markdownを記入すると、（右欄に）HTMLを表示するアプリ
 
 ## 利用機能
-1. v-for
-2. v-bind
-3. v-model
-4. v-on
-5. methods
-6. computed properties ( getters & setters)
-<!-- 7. vue components -->
+1. Using External Library
+2. Vue Mixins
 
 ## 参照ソースの理解
 
@@ -99,6 +94,7 @@ export default function useDebounce() {
 
 ## 実装作戦
 1. `marked`パッケージをインストール
+  - refer npm : https://www.npmjs.com/package/marked
 ```
 npm install marked --save
 ```
