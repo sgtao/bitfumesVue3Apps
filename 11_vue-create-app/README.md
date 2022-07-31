@@ -17,7 +17,7 @@
 3. 🔷 [Markdown](memos/13_Markdown.md)
    1. Using External Library
    2. Vue Mixins
-4. 🔷 Slider
+4. 🔷 [Slider](memos/14_Slider.md)
    1. Vue Transition & Animation
    2. virtual DOM
    3. lifecycle hooks
