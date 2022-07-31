@@ -276,4 +276,24 @@ npm run format # overwrite by prettier
 npm run lint-fix # overwrite recommended and format
 ```
 
+### 7. Huskyで`ESLint+Prettier`をコミット時に実行する
+- husky が　v8になっているので、最近(公式？)の手順で追加する必要がありそう
+  - refer husky : https://typicode.github.io/husky/#/?id=automatic-recommended
+  - install
+```shell
+npx husky-init && npm install       # npm
+````
+  - setup (add command at pre-commit)
+    - `.husky/pre-commit`の中身を書き換えてあげれば動くようだ
+```shell
+$ cat .husky/pre-commit
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+#
+- npm test
++ cd 11_vue-create-app
++ npm run lint-fix
+# EOF
+$
+```
 

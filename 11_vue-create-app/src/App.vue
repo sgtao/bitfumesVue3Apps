@@ -1,9 +1,10 @@
 <template>
     <div id="nav">
         <router-link to="/">Home</router-link> |
-        <router-link class="mx-2" v-for="item in list" :key="item.to" 
-            :to="item.to">🔷{{ item.title }}</router-link>
-         | <router-link to="/about">About</router-link>
+        <router-link class="mx-2" v-for="item in list" :key="item.to" :to="item.to"
+            >🔷{{ item.title }}</router-link
+        >
+        | <router-link to="/about">About</router-link>
     </div>
     <router-view />
 </template>
@@ -12,13 +13,13 @@ export default {
     data() {
         return {
             list: [
-                { title:"DcHeros", to:"/dc-heros" },
-                { title:"Calendar", to:"/calendar" },
-                { title:"Markdown", to:"/markdown" },
-            ]
-        }
-    }
-}
+                {title: 'DcHeros', to: '/dc-heros'},
+                {title: 'Calendar', to: '/calendar'},
+                {title: 'Markdown', to: '/markdown'},
+            ],
+        };
+    },
+};
 </script>
 <style>
 #app {
