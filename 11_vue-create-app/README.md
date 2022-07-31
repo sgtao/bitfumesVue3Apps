@@ -276,6 +276,17 @@ npm run format # overwrite by prettier
 npm run lint-fix # overwrite recommended and format
 ```
 
+#### Googleスタイルでは、コメントにJSDocを使うケースがある
+- Googleの[JavaScriptスタイルガイド](https://google.github.io/styleguide/jsguide.html#terminology-notes)には、コメントに対するルールが設定されている
+> 1.1 Terminology notes
+> > The term comment always refers to implementation comments. We do not use the phrase documentation comments, instead using the common term “JSDoc” for both human-readable text and machine-readable annotations within
+
+- `function`定義でJSDocコメントがないと、ESLintでエラーしてしまうことがあるので、書き方を参照しよう
+  - refer for annotations : https://github.com/google/closure-compiler/wiki/Annotating-JavaScript-for-the-Closure-Compiler
+  - refer GitHub : https://github.com/jsdoc/jsdoc
+  - refer article: https://ics.media/entry/6789/
+
+
 ### 7. Huskyで`ESLint+Prettier`をコミット時に実行する
 - husky が　v8になっているので、最近(公式？)の手順で追加する必要がありそう
   - refer husky : https://typicode.github.io/husky/#/?id=automatic-recommended
