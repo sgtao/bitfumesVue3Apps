@@ -6,22 +6,22 @@
         <div class="w-full absolute" v-for="(color, index) in sliders" :key="color">
             <transition name="fade">
                 <div v-if="index === currentSlide" :class="color" style="height: 350px">
-                    <p  class="text-white pt-40 text-xl">{{ index + 1 }}</p>
+                    <p class="text-white pt-40 text-xl">{{ index + 1 }}</p>
                 </div>
             </transition>
         </div>
-        <div class="w-full" style="height:340px">
-        <div class="absolute bottom-0 w-full flex justify-center">
-            <!-- currentSlideのマークのみ色を変える -->
-            <div
-            v-for="(slider, index) in sliders"
-            :key="slider"
-            @click="makeActive(index)"
-            :class="currentSlide == index ? 'bg-gray-700' : 'bg-gray-300'"
-            class="w-4 h-4 mx-2 rounded-full cursor-pointer shadow-md"
-            ></div>
+        <div class="w-full" style="height: 340px">
+            <div class="absolute bottom-0 w-full flex justify-center">
+                <!-- currentSlideのマークのみ色を変える -->
+                <div
+                    v-for="(slider, index) in sliders"
+                    :key="slider"
+                    @click="makeActive(index)"
+                    :class="currentSlide == index ? 'bg-gray-700' : 'bg-gray-300'"
+                    class="w-4 h-4 mx-2 rounded-full cursor-pointer shadow-md"
+                ></div>
+            </div>
         </div>
-        </div>        
     </section>
 </template>
 <!-- script -->
@@ -53,8 +53,8 @@ export default {
         onMounted(() => {
             console.log(sliders.length);
             interval.value = setInterval(() => {
-                currentSlide.value = currentSlide.value === (sliders.length - 1) ? 
-                    0 : (currentSlide.value += 1);
+                currentSlide.value =
+                    currentSlide.value === sliders.length - 1 ? 0 : (currentSlide.value += 1);
             }, 2000);
         });
         onBeforeUnmount(() => {

@@ -1,6 +1,6 @@
 # bitfumesVue3Apps
 - bitfumesさんのGitHub『vue3-for-beginners』のソースをトレースしてみる
-  - '22.07時点での環境で実装・構築を試してみる
+  - '22.7時点での環境で実装・構築を試してみる
   - `vue create`利用時と、`create-vue`利用時で変化点を確認する
 
 ## 参考資料

@@ -49,7 +49,7 @@
    3. reactive vue3 api
    4. pagination
    5. envirnment variable (.env file)
-10. 🔷 Tensorflow Object Detection
+10. 🔷 [Tensorflow Object Detection](memos/20_TensorFlow.md)
     1. Using Tensorflow with Vue
     2. Device Camera Open
     3. Working with Canvas
@@ -307,4 +307,13 @@ $ cat .husky/pre-commit
 # EOF
 $
 ```
+
+### 8. firebaseでHostingする
+- とらゼミ「React入門【実践編】#3...Firebaseプロジェクトの作成と初めてのデプロイ」を参考にホスティングする
+  - refer U-tube : https://www.youtube.com/watch?v=ta2m6nfYHuQ
+
+
+
+
+
 
