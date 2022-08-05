@@ -5,7 +5,6 @@ import DcHeros from '../views/DcHeros.vue';
 import monthCalendar from '../views/monthCalendar.vue';
 import MarkdownApp from '../views/MarkdownApp.vue';
 import sliderApp from '../views/sliderApp.vue';
-import TensorflowDetector from '../views/TensorflowDetector.vue';
 //
 const routes = [
     {
@@ -37,11 +36,6 @@ const routes = [
         path: '/slider',
         name: 'Slider',
         component: sliderApp,
-    },
-    {
-        path: '/tensorflow',
-        name: 'Tensorflow',
-        component: TensorflowDetector,
     },
 ];
 //
