@@ -3,7 +3,11 @@
     <div class="m-auto p-2 max-w-lg">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
         <monthLabel :monthName="currentMonthName" :year="currentYear" />
-        <pageButtons @emitPrevMonth="prevMonth" @emitCurrMonth="currMonth" @emitNextMonth="nextMonth" />
+        <pageButtons
+            @emitPrevMonth="prevMonth"
+            @emitCurrMonth="currMonth"
+            @emitNextMonth="nextMonth"
+        />
         <dayLabel :days="days" />
         <dateTable :currentYear="currentYear" :currentMonth="currentMonth"></dateTable>
     </div>
