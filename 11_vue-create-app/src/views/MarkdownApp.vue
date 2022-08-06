@@ -16,7 +16,7 @@
                     ></textarea>
                 </article>
                 <!-- v-htmlで結果を表示 -->
-                <article class="w-1/2 border bg-gray-100 pl-4" v-html="markedText"></article>
+                <showHTML class="w-1/2 border" v-html="markedText" />
             </section>
         </div>
     </div>
@@ -27,10 +27,14 @@ import {ref, computed, onMounted} from 'vue';
 import {marked} from 'marked';
 // import hljs from 'highlight.js';
 import useDebounce from '@/utilities/composition/useDebounce';
+import showHTML from '@/components/MarkdownApp/showHTML';
 export default {
+    components: {
+        showHTML,
+    },
     setup() {
         const textRef = ref(''); // text領域のforcus用
-        const text = ref('# **initial text**\n\n Write markdown\n\n');
+        const text = ref('# **initial text**\n\n- Write markdown\n\n');
         const markedText = computed(() => {
             // console.log('marked at ' + Date(Date.now()));
             return marked(text.value);
