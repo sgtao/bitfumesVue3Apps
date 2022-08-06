@@ -3,11 +3,7 @@
     <div class="m-auto p-2 max-w-lg">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
         <monthLabel :monthName="currentMonthName" :year="currentYear" />
-        <section class="flex justify-between">
-            <button class="px-2 border rounded bg-red-200" v-on:click="prevMonth">prev</button>
-            <button class="px-2 border rounded bg-green-200" v-on:click="currMonth">today</button>
-            <button class="px-2 border rounded bg-blue-200" v-on:click="nextMonth">next</button>
-        </section>
+        <pageButtons @emitPrevMonth="prevMonth" @emitCurrMonth="currMonth" @emitNextMonth="nextMonth" />
         <dayLabel :days="days" />
         <dateTable :currentYear="currentYear" :currentMonth="currentMonth"></dateTable>
     </div>
@@ -18,11 +14,13 @@ import {computed, ref} from 'vue';
 import monthLabel from '@/components/monthCalendar/monthLabel';
 import dayLabel from '@/components/monthCalendar/dayLabel';
 import dateTable from '@/components/monthCalendar/dateTable';
+import pageButtons from '@/components/monthCalendar/pageButtons';
 export default {
     components: {
         monthLabel,
         dayLabel,
         dateTable,
+        pageButtons,
     },
     setup() {
         // 現在時刻の年月日

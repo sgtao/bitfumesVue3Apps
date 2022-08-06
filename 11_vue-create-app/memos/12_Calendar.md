@@ -144,10 +144,21 @@ export default {
 - テンプレートーとスクリプトを参考に実装して、動作確認
   - compositionAPIで実装する
   - refer ics-media : https://ics.media/entry/220120/
+
 - レイアウト・スタイリングは元ソースを参考にtailwindcssで指定
   - refer tailwindcss : https://tailwindcss.jp/docs/background-color
+
 - 部品をコンポーネントに分ける
-  - @/components/monthCalendar/calenarMonthLabel :　カレンダーの年月を表示
-  - @/components/monthCalendar/calendarDayLabel :　カレンダーの曜日を表示
-  - @/components/monthCalendar/calendarDateTable :　カレンダーの日付を表示（断念）
   - refer article : https://codelikes.com/vue-props/
+  - 対象は下の3コンポーネント：
+    * @/components/monthCalendar/calenarMonthLabel :　カレンダーの年月を表示
+    * @/components/monthCalendar/calendarDayLabel :　カレンダーの曜日を表示
+    * @/components/monthCalendar/calendarDateTable :　カレンダーの日付を表示（断念）
+
+- 子コンポーネントのイベントを親へ渡す（`emit`記述）
+  - refer Vue.js : [emitsオプション](https://v3.ja.vuejs.org/guide/migration/emits-option.html#_3-x-%E3%81%AE%E6%8C%99%E5%8B%95)
+  - refer article : https://programmer-note.hatenablog.com/entry/2021/11/28/171111
+  - 対象は下のコンポーネント：
+    * @/components/monthCalendar/pageButtons :　カレンダーのめくりボタン
+
+
