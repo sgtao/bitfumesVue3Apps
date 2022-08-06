@@ -14,4 +14,8 @@
   - OptionalAPIでコーディングしているものもCompositionAPIに変えてみる
 - トライアル２（`create-vue`構築環境での開発）
 
+## 利用パッケージ
+- some npm packages
+- bootstrap-reboot.css(v5.2.0) as code
+
 <!-- EOF -->
