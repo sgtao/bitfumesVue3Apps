@@ -16,7 +16,7 @@
                     ></textarea>
                 </article>
                 <!-- v-htmlで結果を表示 -->
-                <showHTML class="w-1/2 border" v-html="markedText" />
+                <ShowHTML class="w-1/2 border" v-html="markedText" />
             </section>
         </div>
     </div>
@@ -27,10 +27,10 @@ import {ref, computed, onMounted} from 'vue';
 import {marked} from 'marked';
 // import hljs from 'highlight.js';
 import useDebounce from '@/utilities/composition/useDebounce';
-import showHTML from '@/components/MarkdownApp/showHTML';
+import ShowHTML from '@/components/MarkdownApp/ShowHTML';
 export default {
     components: {
-        showHTML,
+        ShowHTML,
     },
     setup() {
         const textRef = ref(''); // text領域のforcus用

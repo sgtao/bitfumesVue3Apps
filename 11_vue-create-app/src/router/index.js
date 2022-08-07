@@ -1,22 +1,22 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import defaultHome from '../views/defaultHome.vue';
-import defaultAbout from '../views/defaultAbout.vue';
+import DefaultHome from '../views/DefaultHome.vue';
+import DefaultAbout from '../views/DefaultAbout.vue';
 import DcHeros from '../views/DcHeros.vue';
-import monthCalendar from '../views/monthCalendar.vue';
+import MonthCalendar from '../views/MonthCalendar.vue';
 import MarkdownApp from '../views/MarkdownApp.vue';
-import sliderApp from '../views/sliderApp.vue';
+import SliderApp from '../views/SliderApp.vue';
 import CalculatorApp from '../views/CalculatorApp.vue';
 //
 const routes = [
     {
         path: '/',
         name: 'Home',
-        component: defaultHome,
+        component: DefaultHome,
     },
     {
         path: '/about',
-        name: 'defaultAbout',
-        component: defaultAbout,
+        name: 'About',
+        component: DefaultAbout,
     },
     {
         path: '/dc-heros',
@@ -26,7 +26,7 @@ const routes = [
     {
         path: '/calendar',
         name: 'Calendar',
-        component: monthCalendar,
+        component: MonthCalendar,
     },
     {
         path: '/markdown',
@@ -36,7 +36,7 @@ const routes = [
     {
         path: '/slider',
         name: 'Slider',
-        component: sliderApp,
+        component: SliderApp,
     },
     {
         path: '/calculator',

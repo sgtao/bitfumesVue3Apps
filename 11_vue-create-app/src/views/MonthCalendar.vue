@@ -1,30 +1,30 @@
-<!-- monthCalendar.vue -->
+<!-- MonthCalendar.vue -->
 <template>
     <div class="m-auto p-2 max-w-lg">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
-        <monthLabel :monthName="currentMonthName" :year="currentYear" />
-        <pageButtons
+        <MonthLabel :monthName="currentMonthName" :year="currentYear" />
+        <PageButtons
             @emitPrevMonth="prevMonth"
             @emitCurrMonth="currMonth"
             @emitNextMonth="nextMonth"
         />
-        <dayLabel :days="days" />
-        <dateTable :currentYear="currentYear" :currentMonth="currentMonth"></dateTable>
+        <DayLabel :days="days" />
+        <DateTable :currentYear="currentYear" :currentMonth="currentMonth" />
     </div>
 </template>
 
 <script>
 import {computed, ref} from 'vue';
-import monthLabel from '@/components/monthCalendar/monthLabel';
-import dayLabel from '@/components/monthCalendar/dayLabel';
-import dateTable from '@/components/monthCalendar/dateTable';
-import pageButtons from '@/components/monthCalendar/pageButtons';
+import MonthLabel from '@/components/MonthCalendar/MonthLabel';
+import DayLabel from '@/components/MonthCalendar/DayLabel';
+import DateTable from '@/components/MonthCalendar/DateTable';
+import PageButtons from '@/components/MonthCalendar/PageButtons';
 export default {
     components: {
-        monthLabel,
-        dayLabel,
-        dateTable,
-        pageButtons,
+        MonthLabel,
+        DayLabel,
+        DateTable,
+        PageButtons,
     },
     setup() {
         // 現在時刻の年月日

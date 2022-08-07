@@ -1,4 +1,4 @@
-<!-- sliderApp.vue -->
+<!-- SliderApp.vue -->
 <!-- template -->
 <template>
     <section class="flex flex-wrap w-full relative">
