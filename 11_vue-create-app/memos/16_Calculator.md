@@ -61,54 +61,8 @@
         >
           +
         </button>
-        <button
-          @click="pressed('4')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          4
-        </button>
-        <button
-          @click="pressed('5')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          5
-        </button>
-        <button
-          @click="pressed('6')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          6
-        </button>
-        <button
-          @click="pressed('-')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          -
-        </button>
-        <button
-          @click="pressed('7')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          7
-        </button>
-        <button
-          @click="pressed('8')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          8
-        </button>
-        <button
-          @click="pressed('9')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          9
-        </button>
-        <button
-          @click="pressed('*')"
-          class="p-2 w-10 h-10 border rounded shadow"
-        >
-          *
-        </button>
+
+...
         <button @click="pressed('c')" class="p-2 h-10 border rounded shadow">
           C
         </button>
@@ -189,7 +143,9 @@ export default {
     }
     // （クリア(C)入力時の処理）
     const clear = () => (currentNum.value = "");
-    // キーボード入力時のイベントハンドラの設定
+    // ↑clear関数は、全変数をクリアしていない。＝＞全変数クリアできればいつでも実行できる
+    //
+    // キーボード入力時のイベントハンドラを設定
     // "useWindowEvent"関数内で、EventListenerへの登録・削除を定義している
     const handleKeydown = (e) => pressed(e.key);
     useWindowEvent("keydown", handleKeydown);
