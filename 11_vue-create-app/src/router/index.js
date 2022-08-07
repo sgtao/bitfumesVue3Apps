@@ -5,6 +5,7 @@ import DcHeros from '../views/DcHeros.vue';
 import monthCalendar from '../views/monthCalendar.vue';
 import MarkdownApp from '../views/MarkdownApp.vue';
 import sliderApp from '../views/sliderApp.vue';
+import CalculatorApp from '../views/CalculatorApp.vue';
 //
 const routes = [
     {
@@ -36,6 +37,11 @@ const routes = [
         path: '/slider',
         name: 'Slider',
         component: sliderApp,
+    },
+    {
+        path: '/calculator',
+        name: 'Calculator',
+        component: CalculatorApp,
     },
 ];
 //
