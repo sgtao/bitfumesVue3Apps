@@ -134,7 +134,7 @@ export default {
 ```
 
 ### スタイリング（tailwindの利用）
-- bitfumesのアプリではtailwindを利用している
+- bitfumesさんのアプリではtailwindを利用している
 ```css
 <style></style>
 ```

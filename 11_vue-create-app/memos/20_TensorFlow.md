@@ -153,7 +153,7 @@ export default {
 ```
 
 ### stylingタグ部分
-- `tailwindcss`利用の上で、追加スタリング（`fade`で始まるクラスにつける）
+- bitfumesさんのアプリではtailwindを利用している
 ```css
 <style></style>
 ```

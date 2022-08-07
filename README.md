@@ -10,8 +10,10 @@
 - Demo site : https://vue3-full-course.netlify.app/
 
 ## 作成プロジェクト
-- トライアル１（`@vue/cli`構築環境での開発）：[メモ](11_vue-create-app/README.md)
-  - OptionalAPIでコーディングしているものもCompositionAPIに変えてみる
+- トライアル１（`@vue/cli`構築環境での開発）
+  - [オリジナルの理解と実装方針のメモ](11_vue-create-app/README.md)
+    - OptionalAPIでコーディングしているものもCompositionAPIに変えてみる
+  - [デモサイト](https://bitfumesvue3apps.web.app)
 - トライアル２（`create-vue`構築環境での開発）
 
 ## 利用パッケージ

@@ -104,7 +104,7 @@ export default {
 ```
 
 ### スタイリング（tailwindの利用）
-- bitfumesのアプリではtailwindを利用している
+- bitfumesさんのアプリではtailwindを利用している
   - 追加でTailwindを使えるようにする。
   - refer Vue3-site : https://tailwindcss.com/docs/guides/vite
   - refer Qiita : https://qiita.com/inouuuuuuu/items/c6e509be909fa2940fdd

@@ -32,7 +32,7 @@
    8. firebase google login
    9. Refactoring with component
    10. vue3 teleport
-6. 🔷 Calculator
+6. 🔷 [Calculator](memos/16_Calculator.md)
    1. Composition API
    2. window event listener
    3. resuable composition api
