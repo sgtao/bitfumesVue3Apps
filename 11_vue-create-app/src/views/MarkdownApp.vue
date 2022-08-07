@@ -26,7 +26,7 @@
 import {ref, computed, onMounted} from 'vue';
 import {marked} from 'marked';
 // import hljs from 'highlight.js';
-import useDebounce from '@/utilities/composition/useDebounce';
+import { useDebounce }  from '@/utilities/composition//index';
 import ShowHTML from '@/components/MarkdownApp/ShowHTML';
 export default {
     components: {

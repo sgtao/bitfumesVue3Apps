@@ -37,7 +37,7 @@
 </template>
 <script>
 import {ref} from 'vue';
-import useWindowEvent from '@/utilities/composition/useWindowEvent';
+import { useWindowEvent }  from '@/utilities/composition//index';
 export default {
     setup() {
         const operations = ['+', '-', '*', '/'];
@@ -56,7 +56,7 @@ export default {
         // クリックイベントの処理：入力値で処理を振り分け宇
         const pressed = (value) => {
             if (value === '=' || value === 'Enter') calculate();
-            else if (value === 'c') clear();
+            else if (value === 'c' || value === 'C') clear();
             else if (operations.includes(value)) applyOperation(value);
             else if (numbers.includes(value)) appendNumber(value);
         };
@@ -91,7 +91,7 @@ export default {
         //
         // （クリア(C)入力時の処理）
         const clear = () => {
-            currentNum.value = '';
+            currentNum.value = '0';
             prevNum.value = '';
             selectedOperation.value = '';
         };
