@@ -37,7 +37,7 @@
 </template>
 <script>
 import {ref} from 'vue';
-import { useWindowEvent }  from '@/utilities/composition//index';
+import {useWindowEvent} from '@/utilities/composition//index';
 export default {
     setup() {
         const operations = ['+', '-', '*', '/'];

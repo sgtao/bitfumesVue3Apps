@@ -1,6 +1,11 @@
 <template>
-    <div class="about">
-        <h1>This is an about page</h1>
+    <div class="about m-auto">
+        <p>
+            This project repository store on
+            <a href="https://github.com/sgtao/bitfumesVue3Apps" target="_blank">
+                <strong>GitHub</strong> </a
+            >.
+        </p>
     </div>
 </template>
 <script>
