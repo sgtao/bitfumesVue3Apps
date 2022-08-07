@@ -27,3 +27,4 @@ pnpm-debug.log*
 # local setting
 01_references
 script
+11_vue-create-app/.firebase
