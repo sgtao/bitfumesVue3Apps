@@ -49,4 +49,31 @@
 ### トライアル２（`create-vue`の開発環境）
 - まだ準備できてません
 
+## 補足メモ
+
+### git-commit時に、`ESLint+Prettier`を利用する
+- サブフォルダ`11_vue-create-app`内にnodeのパッケージをまとめたいので、設定変更する
+  - Prettir のドキュメントに、huskyなしで、git-hook-precommitの設定方法が記載。参考にする。
+  - refer Prettier : https://prettier.io/docs/en/precommit.html#option-6-shell-script
+  - refer blog : https://www.unitrust.co.jp/2426
+  - refer blog : https://obel.hatenablog.jp/entry/20210721/1626807600
+  - 設定追加：(実行権も与える)
+```shell
+$ cat .git/hooks/pre-commit
+#!/bin/sh
+#
+( cd 11_vue-create-app; npm run lint-fix; )
+#
+$
+```
+  - 設定変更：`.git/config`の`[core]hooksPath`がhusky利用になってたのを戻す
+```shell
+$ cat .git/config
+[core]
+...
+        hooksPath = .git/hooks
+...
+$
+```
+
 <!-- EOF -->
