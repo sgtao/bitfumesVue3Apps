@@ -16,7 +16,17 @@
                 {{ item.title }}
             </router-link>
         </div>
-        <div>
+        <div class="flex justify-end">
+            <a class="mr-2" href="https://github.com/sgtao/bitfumesVue3Apps" target="_blank">
+                <img alt="github" src="@/assets/icons/github.svg" />
+            </a>
+            <a
+                class="mr-2"
+                href="https://vscode.dev/github.com/sgtao/bitfumesVue3Apps"
+                target="_blank"
+            >
+                <img alt="github" src="@/assets/icons/code-slash.svg" />
+            </a>
             <button v-if="isLoggedIn" class="mx-2" @click="logout">Logout</button>
             <button v-else class="mx-2" @click="openLogin">Login</button>
         </div>

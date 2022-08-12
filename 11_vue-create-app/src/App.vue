@@ -1,16 +1,7 @@
 <template>
     <div class="w-full h-screen">
         <AppNavigator :list="list" class="w-full h-1/12" />
-        <router-view :list="list" class="w-full h-5/6" />
-        <div class="text-left h-1/12">
-            <hr />
-            <p>
-                This project repository store on
-                <a href="https://github.com/sgtao/bitfumesVue3Apps" target="_blank">
-                    <strong>GitHub</strong> </a
-                >.
-            </p>
-        </div>
+        <router-view :list="list" class="w-full h-full" />
     </div>
 </template>
 <script>
