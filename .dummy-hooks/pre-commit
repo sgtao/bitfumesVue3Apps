@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+( cd 11_vue-create-app; npm run lint-fix; );
+git add -A ;
+#

@@ -11,7 +11,7 @@
                     <p class="flex justify-start">
                         <!-- svg: checked icon -->
                         <svg
-                            class="w-6 h-6 text-green-600 dark:text-white"
+                            class="w-6 h-6 dark:text-white"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"

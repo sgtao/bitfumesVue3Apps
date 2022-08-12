@@ -59,10 +59,11 @@
   - refer blog : https://obel.hatenablog.jp/entry/20210721/1626807600
   - 設定追加：(実行権も与える)
 ```shell
-$ cat .git/hooks/pre-commit
+$ cat .dummy-hooks/pre-commit
 #!/bin/sh
 #
-( cd 11_vue-create-app; npm run lint-fix; )
+( cd 11_vue-create-app; npm run lint-fix; );
+git add -A ;
 #
 $
 ```
@@ -71,7 +72,7 @@ $
 $ cat .git/config
 [core]
 ...
-        hooksPath = .git/hooks
+        hooksPath = .dummy-hooks
 ...
 $
 ```
