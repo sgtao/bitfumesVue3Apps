@@ -32,15 +32,15 @@ export default {
         const currentSlide = ref(1); // 表示スライド番号
         const sliders = reactive([
             // スライドcolor(指定可能な色の種類分を定義)
-            'bg-red-600',
-            'bg-orange-600',
-            'bg-yellow-600',
             'bg-green-600',
             'bg-teal-600',
             'bg-blue-600',
             'bg-indigo-600',
             'bg-purple-600',
             'bg-pink-600',
+            'bg-red-600',
+            'bg-orange-600',
+            'bg-yellow-600',
         ]);
         const interval = ref('');
         //

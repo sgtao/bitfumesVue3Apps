@@ -1,24 +1,52 @@
 <template>
-    <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link class="mx-2" v-for="item in list" :key="item.to" :to="item.to"
-            >🔷{{ item.title }}</router-link
-        >
-        | <router-link to="/about">About</router-link>
+    <div class="w-full">
+        <AppNavigator :list="list" class="w-full" />
+        <router-view :list="list" class="w-full" />
     </div>
-    <router-view />
 </template>
 <script>
+import {reactive} from 'vue';
+// @ is an alias to /src
+import AppNavigator from '@/components/AppNavigator';
 export default {
-    data() {
+    components: {
+        AppNavigator,
+    },
+    setup() {
+        const list = reactive([
+            {
+                title: 'DcHeros',
+                to: '/dc-heros',
+                topics: [
+                    'v-for, v-bind, v-model, v-on',
+                    'method',
+                    'computed ( getters & setters)',
+                    'vue components',
+                ],
+            },
+            {
+                title: 'Calendar',
+                to: '/calendar',
+                topics: ['Javascript Date', 'Vue Router'],
+            },
+            {
+                title: 'Markdown',
+                to: '/markdown',
+                topics: ['Using External Library', 'Vue Mixins'],
+            },
+            {
+                title: 'Slider',
+                to: '/slider',
+                topics: ['Vue Transition & Animation', 'virtual DOM', 'lifecycle hooks'],
+            },
+            {
+                title: 'Calculator',
+                to: '/calculator',
+                topics: ['resuable composition api', 'window event listener', 'Composition API'],
+            },
+        ]);
         return {
-            list: [
-                {title: 'DcHeros', to: '/dc-heros'},
-                {title: 'Calendar', to: '/calendar'},
-                {title: 'Markdown', to: '/markdown'},
-                {title: 'Slider', to: '/slider'},
-                {title: 'Calculator', to: '/calculator'},
-            ],
+            list,
         };
     },
 };
