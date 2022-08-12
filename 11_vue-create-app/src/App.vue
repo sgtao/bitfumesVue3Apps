@@ -29,19 +29,20 @@ export default {
                 topics: [
                     'v-for, v-bind, v-model, v-on',
                     'method',
-                    'computed ( getters & setters)',
-                    'vue components',
+                    'computed',
+                    'LifeCycle Hooks',
+                    'vuex',
                 ],
             },
             {
                 title: 'Calendar',
                 to: '/calendar',
-                topics: ['Javascript Date', 'Vue Router'],
+                topics: ['Javascript Date', 'vue components', 'vue props', 'vue emit'],
             },
             {
                 title: 'Markdown',
                 to: '/markdown',
-                topics: ['Using External Library', 'Vue Mixins'],
+                topics: ['Using External Library', 'vue props'],
             },
             {
                 title: 'Slider',
@@ -51,12 +52,12 @@ export default {
             {
                 title: 'Calculator',
                 to: '/calculator',
-                topics: ['resuable composition api', 'window event listener', 'Composition API'],
+                topics: ['window event listener', 'Keyboard events'],
             },
             {
                 title: 'Modal',
                 to: '/resusable-modal',
-                topics: ['slots', 'named slots', 'emit'],
+                topics: ['resuable composition api', 'slots', 'named slots', 'emit'],
             },
         ]);
         return {

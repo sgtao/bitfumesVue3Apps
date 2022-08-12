@@ -1,7 +1,7 @@
 <!-- DcHeros.vuee -->
 <template>
     <div class="m-auto h-full">
-        <h1 class="text-3xl text-center my-4">Dc Heros herosCount {{ herosCount }}</h1>
+        <h1 class="text-3xl text-center my-4">Dc Heros heros: {{ herosCount }}</h1>
         <ul class="rounded p-2 w-80 m-auto">
             <li class="m-auto" v-for="(hero, index) in dcHeros" :key="hero.name">
                 <div
