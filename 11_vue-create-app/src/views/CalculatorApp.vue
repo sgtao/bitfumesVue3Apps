@@ -1,6 +1,6 @@
 <!-- CalculatorApp.vue -->
 <template>
-    <section class="flex w-full">
+    <section class="flex w-full h-full">
         <div class="m-auto">
             <div class="w-full">
                 <h1 class="text-3xl text-center">CalculatorApp</h1>

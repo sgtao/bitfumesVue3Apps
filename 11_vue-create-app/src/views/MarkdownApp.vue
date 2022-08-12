@@ -1,10 +1,10 @@
 <!-- MarkdownApp.vue -->
 <!-- HTML -->
 <template>
-    <div class="m-auto h-screen">
+    <div class="m-auto h-full">
         <h1 class="w-full text-3xl my-4 text-center">Markdown App</h1>
         <!-- アプリ本体の領域 -->
-        <div class="flex flex-wrap w-full h-screen">
+        <div class="flex flex-wrap w-full h-full">
             <section class="flex m-auto w-10/12 h-full text-left">
                 <!-- テキストエリアを設置 -->
                 <article class="w-1/2 border">

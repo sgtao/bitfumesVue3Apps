@@ -1,3 +1,4 @@
+<!-- HomeView.vue -->
 <template>
     <div class="home">
         <h1 class="text-center text-2xl md:text-4xl my-2">Vue 3 Apps</h1>
@@ -40,7 +41,7 @@
 
 <script>
 export default {
-    name: 'defaultHome',
+    name: 'HomeView',
     props: {
         list: Array,
     },

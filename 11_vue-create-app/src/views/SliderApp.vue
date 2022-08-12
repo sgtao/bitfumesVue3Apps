@@ -1,7 +1,7 @@
 <!-- SliderApp.vue -->
 <!-- template -->
 <template>
-    <section class="flex flex-wrap w-full relative">
+    <section class="flex flex-wrap w-full relative h-full">
         <h1 class="m-auto w-full text-xl">Slider</h1>
         <div class="w-full absolute" v-for="(color, index) in sliders" :key="color">
             <transition name="fade">
@@ -10,8 +10,8 @@
                 </div>
             </transition>
         </div>
-        <div class="w-full" style="height: 340px">
-            <div class="absolute bottom-0 w-full flex justify-center">
+        <div class="w-full mt-48" style="height: 340px">
+            <div class="absolute w-full flex justify-center">
                 <!-- currentSlideのマークのみ色を変える -->
                 <div
                     v-for="(slider, index) in sliders"

@@ -1,6 +1,6 @@
 <!-- MonthCalendar.vue -->
 <template>
-    <div class="m-auto p-2 max-w-lg">
+    <div class="m-auto p-2 max-w-lg h-full">
         <h1 class="text-3xl my-2 text-center">Calendar</h1>
         <MonthLabel :monthName="currentMonthName" :year="currentYear" />
         <PageButtons

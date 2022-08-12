@@ -1,6 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router';
-import DefaultHome from '../views/DefaultHome.vue';
-import DefaultAbout from '../views/DefaultAbout.vue';
+import HomeView from '../views/HomeView.vue';
 import DcHeros from '../views/DcHeros.vue';
 import MonthCalendar from '../views/MonthCalendar.vue';
 import MarkdownApp from '../views/MarkdownApp.vue';
@@ -11,12 +10,7 @@ const routes = [
     {
         path: '/',
         name: 'Home',
-        component: DefaultHome,
-    },
-    {
-        path: '/about',
-        name: 'About',
-        component: DefaultAbout,
+        component: HomeView,
     },
     {
         path: '/dc-heros',
