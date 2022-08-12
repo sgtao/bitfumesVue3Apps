@@ -53,6 +53,11 @@ export default {
                 to: '/calculator',
                 topics: ['resuable composition api', 'window event listener', 'Composition API'],
             },
+            {
+                title: 'Modal',
+                to: '/resusable-modal',
+                topics: ['slots', 'named slots', 'emit'],
+            },
         ]);
         return {
             list,

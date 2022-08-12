@@ -5,7 +5,7 @@ import MonthCalendar from '../views/MonthCalendar.vue';
 import MarkdownApp from '../views/MarkdownApp.vue';
 import SliderApp from '../views/SliderApp.vue';
 import CalculatorApp from '../views/CalculatorApp.vue';
-import ReuseableModal from '../views/ReuseableModal.vue';
+import ReusableModal from '../views/ReusableModal.vue';
 //
 const routes = [
     {
@@ -39,9 +39,9 @@ const routes = [
         component: CalculatorApp,
     },
     {
-        path: '/resuseable-modal',
-        name: 'ReuseableModal',
-        component: ReuseableModal,
+        path: '/resusable-modal',
+        name: 'ReusableModal',
+        component: ReusableModal,
     },
 ];
 //

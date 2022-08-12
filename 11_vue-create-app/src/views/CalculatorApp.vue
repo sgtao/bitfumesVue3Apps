@@ -1,7 +1,7 @@
 <!-- CalculatorApp.vue -->
 <template>
-    <section class="flex w-full h-full">
-        <div class="m-auto">
+    <section class="flex justify-center w-full h-full">
+        <div class="mt-10">
             <div class="w-full">
                 <h1 class="text-3xl text-center">CalculatorApp</h1>
                 <small>You can fully use keyboard to calculate</small>
