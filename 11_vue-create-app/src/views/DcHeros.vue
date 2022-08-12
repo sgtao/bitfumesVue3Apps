@@ -25,13 +25,15 @@
     </div>
 </template>
 <script>
-import {computed, onMounted, ref} from 'vue';
+import {ref, computed, onMounted, onBeforeUnmount} from 'vue';
+import {useStore} from 'vuex';
 export default {
     /**
      * setup() : CompositionAPI定義
      * @return {*} defined const variables
      */
     setup() {
+        const store = useStore();
         // newHeroRef: 初回レンダリング時(mountされたとき)にfocusするデータ
         const newHeroRef = ref('');
         // newHero: v-modelでinput要素と連動するデータ
@@ -46,8 +48,16 @@ export default {
         ]);
         // mountされたとき、input要素にforcusする？
         onMounted(() => {
+            console.log(store.getters.dcHeros);
+            if (store.getters.dcHeros.length > 0) {
+                console.log('dcHeros has had payload.');
+                dcHeros.value = store.getters.dcHeros;
+            }
             newHeroRef.value.focus();
             console.log(dcHeros.value);
+        });
+        onBeforeUnmount(() => {
+            store.commit('setDcHeros', dcHeros);
         });
         // heroCount: dcHerosオブジェクトのアイテム数をカウントする
         const herosCount = computed({
